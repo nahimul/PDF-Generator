@@ -1,0 +1,7 @@
+{
+  "name": "PDF-generator-frontend",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular-standalone"
+}
