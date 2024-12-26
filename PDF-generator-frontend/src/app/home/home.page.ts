@@ -1,6 +1,11 @@
 import { Component } from '@angular/core';
-import { FormControl,FormGroup, FormsModule } from '@angular/forms';
-import { MatFormFieldModule } from "@angular/material/form-field";
+import {MyForm} from '../module/interfaces';
+import {
+  FormGroup,
+  FormControl,
+  ReactiveFormsModule,
+} from '@angular/forms';
+import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatFormField, MatSelectModule } from '@angular/material/select';
 import { MatInputModule } from '@angular/material/input';
 
@@ -9,7 +14,7 @@ import {
   IonToolbar,
   IonTitle,
   IonContent,
-  IonButton
+  IonButton,
 } from '@ionic/angular/standalone';
 
 @Component({
@@ -24,13 +29,16 @@ import {
     MatFormField,
     MatFormFieldModule,
     MatFormField,
-    FormsModule,
+    //FormsModule,
     MatInputModule,
     IonButton,
+    ReactiveFormsModule,
   ],
 })
 export class HomePage {
-  public pdfForm: FormGroup = new FormGroup({
+  public formValue: any;
+  public isPermanentAddressDisabled = true;
+  public pdfData: FormGroup = new FormGroup({
     fName: new FormControl(''),
     lName: new FormControl(''),
     phone: new FormControl(''),
@@ -40,5 +48,18 @@ export class HomePage {
   });
   constructor() {}
 
-  pdfFormData (event:Event){};
+  printPDF(event: Event) {
+    this.formValue = this.pdfData.value;
+    console.log('hello!!');
+    console.log(this.formValue);
+  }
+
+  enablePermanentAddress():void {
+    if (this.pdfData?.value?.presentAddress) {
+      this.isPermanentAddressDisabled = false;
+      this.pdfData
+        .get('permanentAddress')
+        ?.setValue(this.pdfData?.get('presentAddress')?.value);
+    }
+  }
 }
