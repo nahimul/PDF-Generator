@@ -1,6 +1,6 @@
-export interface MyForm{
-    fName:string,
-    lName:string,
+export interface UserForm{
+    fastName:string,
+    lastName:string,
     phone:number,
     email:string,
     presentAddress:string,
