@@ -1,0 +1,55 @@
+<h1 style="text-align: center; color: blue; font-weight: 600; font-size: 40px">
+  {{ message }}
+</h1>
+
+<form class="pdf-form" (ngSubmit)="onFormSubmit($event)" [formGroup]="pdfFormData">
+  <mat-form-field [style.width.px]="400">
+    <mat-label>First name</mat-label>
+    <input matInput formControlName="fastName" />
+  </mat-form-field>
+  <br />
+  <mat-form-field [style.width.px]="400">
+    <mat-label>Last Name</mat-label>
+    <input matInput formControlName="lastName" />
+  </mat-form-field>
+
+  <p>
+    <mat-form-field [style.width.px]="400">
+      <mat-label> Phone number </mat-label>
+      <input type="number" matInput formControlName="phone" />
+    </mat-form-field>
+    <br />
+    <mat-form-field [style.width.px]="400">
+      <mat-label> E-mail </mat-label>
+      <input type="email" matInput formControlName="email" />
+    </mat-form-field>
+  </p>
+  <p>
+    <mat-form-field [style.width.px]="400">
+      <mat-label> Present Address </mat-label>
+      <textarea
+        matInput
+        placeholder="Enter your present Address"
+        formControlName="presentAddress"
+      >
+Ex: Dhaka Bangladesh</textarea
+      >
+    </mat-form-field>
+    <br />
+
+    <mat-form-field [style.width.px]="400">
+      <mat-label> Permanent Address </mat-label>
+      <textarea
+        matInput
+        placeholder="Enter your present Address"
+        formControlName="permanentAddress"
+        ng-disabled="isPermanentAddressDisabled"
+        (click)="enablePermanentAddress()"
+      >
+Ex: Dhaka Bangladesh</textarea
+      >
+    </mat-form-field>
+  </p>
+
+  <ion-button type="submit">Download pdf</ion-button>
+</form>

@@ -1,19 +1,19 @@
 import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 import { IonicModule } from '@ionic/angular';
 
-import { MyComponentsComponent } from './my-components.component';
+import { PdfFormComponent } from './pdf-form.component';
 
-describe('MyComponentsComponent', () => {
-  let component: MyComponentsComponent;
-  let fixture: ComponentFixture<MyComponentsComponent>;
+describe('PdfFormComponent', () => {
+  let component: PdfFormComponent;
+  let fixture: ComponentFixture<PdfFormComponent>;
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      declarations: [ MyComponentsComponent ],
+      declarations: [ PdfFormComponent ],
       imports: [IonicModule.forRoot()]
     }).compileComponents();
 
-    fixture = TestBed.createComponent(MyComponentsComponent);
+    fixture = TestBed.createComponent(PdfFormComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   }));

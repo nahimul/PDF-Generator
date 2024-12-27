@@ -1,4 +1,4 @@
-export interface UserForm{
+export interface UserInfo{
     fastName:string,
     lastName:string,
     phone:number,
