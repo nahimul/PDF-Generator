@@ -25,7 +25,8 @@ import { UserInfo } from '../model/interfaces';
 export class HomePage {
 
   public pdfFormData?: UserInfo;
-
+  public parentData="Fill the form";
+ 
   constructor() {}  
 
   setPDFData(event: UserInfo){

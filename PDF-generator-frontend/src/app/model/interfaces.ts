@@ -1,7 +1,7 @@
 export interface UserInfo{
     fastName:string,
     lastName:string,
-    phone:number,
+    phone:string,
     email:string,
     presentAddress:string,
     permanentAddress:string,

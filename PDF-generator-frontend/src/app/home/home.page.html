@@ -1,12 +1,12 @@
 <ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title> PDF Generators </ion-title>
+  <ion-toolbar color="primary">
+    <ion-title > PDF Generators </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
- <div class="pdf-div">
-  <app-pdf-form  (formValue) = "setPDFData($event)"/>
+ <div class="flex flex-col justify-center items-center h-full gap-2 w-full bg-gray-100">
+  <app-pdf-form class="w-full flex flex-col justify-center gap-2 items-center p-4 " (formValue) = "setPDFData($event)" [message]="parentData" />
   </div>
 
 </ion-content>

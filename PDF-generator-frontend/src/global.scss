@@ -13,7 +13,13 @@ html {
     typography: Roboto,
     density: 0,
   ));
-}/*
+}
+
+/*Tailwind CSS*/
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+/*
  * App Global CSS
  * ----------------------------------------------------------------------------
  * Put style rules here that you want to apply globally. These styles are for
